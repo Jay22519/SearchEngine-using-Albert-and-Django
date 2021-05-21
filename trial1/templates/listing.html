@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block page_content %}
+
+<h2> All wikipedia links Available Now </h2>
+<br>
+<h2> All wikipedia links Available Now </h2>
+<form action="{% url 'contentTopic'%}" method="get">
+      <input name="query" type="text" placeholder="Search here topic.." >
+      <button type="submit" name="button">Submit topic</button>
+</form>
+
+
+<form action="{% url 'search'%}" method="get">
+      <input name="query" type="text" placeholder="Search here articles.." >
+      <button type="submit" name="button">Submit article </button>
+
+<br>
+<hr>
+
+<ul>
+{% for d in datas %}
+  <h3><a href = "https://en.wikipedia.org/wiki/{{d.Title}}">{{d.Title}}</a></h3>
+  <br>
+  {{d.Summary}} 
+  <br>
+  <form action="{% url 'about'%}" method="get">
+      <input name="query" type="hidden" value = "{{d.Title}}">
+      <button type="submit" name="button"><b>Read More</b></button>
+</form>
+  
+  <br>
+  <hr>
+  <hr>
+  <hr>
+
+{% endfor %}
+</ul>
+
+
+{% endblock %}

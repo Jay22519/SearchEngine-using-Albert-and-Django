@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block page_content %}
+
+<h2> All wikipedia links Available Now </h2>
+<form action="{% url 'contentTopic'%}" method="get">
+      <input name="query" type="text" placeholder="Search here topic.." >
+      <button type="submit" name="button">Submit topic</button>
+</form>
+
+
+<form action="{% url 'search'%}" method="get">
+      <input name="query" type="text" placeholder="Search here articles.." >
+      <button type="submit" name="button">Submit article </button>
+</form>
+
+
+<form action="{% url 'query'%}" method="get">
+      <input name="query" type="text" placeholder="Search here query.." >
+      <button type="submit" name="button">Submit query </button>
+</form>
+
+
+{% endblock %}

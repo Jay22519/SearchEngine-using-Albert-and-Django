@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block page_content %}
+
+
+
+{% for d in datas %}
+  <h3><a href = "https://en.wikipedia.org/wiki/{{d.Title}}">{{d.Title}}</a></h3>
+  <br>
+  {{d.Content}} 
+  <br>
+  <hr>
+  <hr>
+  <h2> <b>Related Tags</b> </h2>
+  {{d.Related_links}}
+  <br>
+  <hr>
+  <hr>
+  <hr>
+
+{% endfor %}
+</ul>
+
+{% endblock %}
