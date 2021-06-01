@@ -9,23 +9,16 @@
 <hr>
 
 <ul>
-{% for d in datas %}
-  <h3><a href = "https://en.wikipedia.org/wiki/{{d.Title}}">{{d.Title}}</a></h3>
-  <br>
-  {{d.Summary}} 
-  <br>
-  <form action="{% url 'about'%}" method="get">
-      <input name="query" type="hidden" value = "{{d.Title}}">
-      <button type="submit" name="button"><b>Read More</b></button>
-</form>
+
+{{answer}}
+<br>
+<br>
+{{context}}
   
   <br>
   <hr>
   <hr>
   <hr>
-
-{% endfor %}
-</ul>
 
 
 {% endblock %}
